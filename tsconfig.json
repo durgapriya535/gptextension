@@ -1,0 +1,23 @@
+// {
+//   "extends": "./.wxt/tsconfig.json",
+//   "compilerOptions": {
+//     "allowImportingTsExtensions": true,
+//     "jsx": "react-jsx"
+//   }
+// }
+{
+    "extends": "./.wxt/tsconfig.json",
+
+  "compilerOptions": {
+    "jsx": "react-jsx", // Use "react-jsx" if you're using React 17+
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["DOM", "ESNext"],
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["entrypoints/**/*", "src/**/*"]
+}
