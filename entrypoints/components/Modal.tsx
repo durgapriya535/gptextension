@@ -5,25 +5,21 @@ type ModalProps = {
 };
 
 const Modal = ({ setModalOpen }: ModalProps) => {
-  // Separate states for each textarea
-  const [command1, setCommand1] = useState(''); // State for first textarea
-  const [command2, setCommand2] = useState(''); // State for second textarea (for regenerate)
+  const [command1, setCommand1] = useState(''); 
+  const [command2, setCommand2] = useState(''); 
   const [generatedReply, setGeneratedReply] = useState('');
   const [buttonChange, setButtonChange] = useState(false);
-  const modalRef = useRef<HTMLDivElement>(null); // Reference to the modal content
+  const modalRef = useRef<HTMLDivElement>(null); 
 
-  // Function to handle closing the modal
   const handleCloseModal = () => {
     setModalOpen(false);
   };
 
-  // Function to handle generating a response
   const handleGenerate = () => {
     setGeneratedReply('Thank you for the opportunity! If you have any more questions, feel free to ask.');
     setButtonChange(true);
   };
 
-  // Insert reply into the message input
   const insertReply = (reply: string) => {
     const messageInput = document.querySelector('div.msg-form__contenteditable p') as HTMLElement;
     if (messageInput) {
@@ -32,19 +28,15 @@ const Modal = ({ setModalOpen }: ModalProps) => {
     }
   };
 
-  // Effect to detect clicks outside the modal content
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      // Check if the click is outside the modal
       if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
-        handleCloseModal(); // Close the modal if the click is outside
+        handleCloseModal(); 
       }
     };
 
-    // Add event listener for click events on the entire document
     document.addEventListener('mousedown', handleClickOutside);
 
-    // Cleanup the event listener on component unmount
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
@@ -58,6 +50,7 @@ const Modal = ({ setModalOpen }: ModalProps) => {
         onChange={(e) => setCommand1(e.target.value)}
         placeholder="your prompt"
         className={buttonChange ? "bg-gray-200 flex ml-20 p-6 w-4/5 rounded-lg text-gray-700" : "w-full p-2 border border-gray-300 rounded mb-4"}
+        
       />
 
         <div className="mt-4 justify-center items-center ">
