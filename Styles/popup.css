@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.popup {
+    position: absolute !important;
+    top: 30vh;
+    left: 30vw;
+    width: 40vw;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+    z-index: 1000;
+  }
+  
+  .popup input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 4px;
+  }
+  
+  .popup .primary-button {
+    width: auto;
+    padding: 5px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    margin-left: 5%;
+  }
+
+  .popup .secondary-button {
+    width: auto;
+    padding: 5px;
+    background-color: white;
+    color: gray;
+    border: none;
+    
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  .popup .primary-button:hover {
+    background-color: #1d4bb7;
+  }
+
+  .popup .secondary-button:hover {
+    background-color: whitesmoke;
+  }

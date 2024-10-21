@@ -1,3 +1,4 @@
+// export default AIButton;
 import React, { useState } from 'react';
 import Modal from './Modal'; // Import the modal component
 
@@ -5,7 +6,11 @@ const AIButton = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleClick = () => {
-    setModalOpen(true); // Open the modal when AI button is clicked
+    if(!isModalOpen){
+        setModalOpen(true); // Open the modal when AI button is clicked
+    }else{
+        setModalOpen(false); // Close the modal when AI button is clicked again
+    }
   };
 
   return (
